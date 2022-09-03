@@ -1,17 +1,21 @@
-// const item = new Product (name, id, price, qty, userOrder)
-
-const p1 = new Product('Product 1','p1', 10, 1, 1)
-const p2 = new Product('Product 2','p2', 20, 0, 0)
-const p3 = new Product('Product 3','p3', 30, 3, 4)
-const p4 = new Product('Product 4','p4', 40, 4, 2)
-
-p1.checkStock()
-p2.checkStock()
-p3.checkStock()
-p4.checkStock()
-
-
-const itemDeliveryTest1 = new itemShipping(false,0)
-const itemDeliveryTest2 = new itemShipping(true,0)
-
-itemDeliveryTest2.deliveryPrice()
+// this constructor is used to make the items on the store
+class Product {
+    constructor(name,id,price,quantity) {
+        this.name = name
+        this.id = id
+        this.price = price
+        this.quantity = quantity
+    }
+    checkStock(orderQty) {
+        console.log(this.quantity)
+        console.log(orderQty)
+        // this cycle checks for an initial stock and if the user order is valid
+        if (this.quantity > 0 && this.quantity - orderQty >= 0) {
+            console.log(`Is there stock of ${this.name}? Yes, ${this.quantity}`)
+            return true
+        } else {
+            console.log(`There is no stock of ${this.name}`)
+            return false
+        }       
+    }
+}
