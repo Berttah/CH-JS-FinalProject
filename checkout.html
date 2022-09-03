@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./css_sass/style.css">
+    <script src="https://kit.fontawesome.com/ab3bbdf674.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Title & Navbar -->
+    <nav class="navBar">
+        <h1>Proyecto Final - Javascript: Shop & Cart</h1>
+        <div>
+            <ul class="navButtonList">
+                <li>
+                    <a class="navButton" href="./index.html">Products</a>
+                </li>
+                <li>
+                    <a class="navButton" href="./checkout.html">Checkout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Area -->
+    <main id="productAreaContainer" class="mainCheckout">
+        <p>
+            Formulario de datos del comprador & Checkout
+        </p>
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-truck-moving"></i>
+        <i class="fa-solid fa-trash-can"></i>
+        <i class="fa-solid fa-circle-plus"></i>
+        <i class="fa-solid fa-circle-minus"></i>
+        <i class="fa-solid fa-credit-card"></i>
+    </main>
+
+
+    
+    <script src="./js/products.js"></script> <!--it is called first since the following use the product constructor-->
+    <script src="./js/cart.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>

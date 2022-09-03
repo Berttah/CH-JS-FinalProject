@@ -5,55 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/global.css">
+    <title>CH-JS Proyecto Final</title>
+    <link rel="stylesheet" href="./css_sass/style.css">
+    <script src="https://kit.fontawesome.com/ab3bbdf674.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Proyecto Final - Javascript: Shop & Cart</h1>
-    <h2>Product Selection & Price Calculation</h2>
+    <!-- Title & Navbar -->
+    <nav class="navBar">
+        <h1>Proyecto Final - Javascript: Shop & Cart</h1>
+        <div>
+            <ul class="navButtonList">
+                <li>
+                    <a class="navButton" href="./index.html">Products</a>
+                </li>
+                <li>
+                    <a class="navButton" href="./checkout.html">Checkout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div>Current State:</div>
-    <p>1a- Product Item creation</p>
-    <p>1b- Function to check stock</p>
-    <p>1c- Function to validate the user demmand</p>
-    <p>2a- Shipping area selection</p>
-    <p>2b- Function to asign shipping area price</p>
-    <p>2c- Base needs for the future of the project</p>
+    <!-- Product Cards Area -->
+    <main id="productAreaContainer" class="mainIndex">
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+        <div class="productCard">
+            <div class="labelCard"> Stock</div>
+            <div class="imgCard">   <img class="cardImage"  src="./assets/open-book.png" alt="book"></div>
+            <div class="nameCard">  Product</div>
+            <div class="priceCard"> $ Price</div>
+            <div class="buyCard">   <i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+    </main>
 
-    <!--
-    <div id="productAreaContainer">
-        <div class="productCard">
-            <div>Stock Label</div>
-            <br>
-            <div>Product 1</div>
-            <div>Image</div>
-            <div>Price</div>
-            <br>
-            <div>Buy Button</div>
-        </div>
-        <div class="productCard">
-            <div>Stock Label</div>
-            <br>
-            <div>Product 2</div>
-            <div>Image</div>
-            <div>Price</div>
-            <br>
-            <div>Buy Button</div>
-        </div>
-        <div class="productCard">
-            <div>Stock Label</div>
-            <br>
-            <div>Product 3</div>
-            <div>Image</div>
-            <div>Price</div>
-            <br>
-            <div>Buy Button</div>
-        </div>
-    </div>
-    -->
     
-
+    <script src="./js/products.js"></script> <!--it is called first since the following use the product constructor-->
+    <script src="./js/cart.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/products.js"></script>
 </body>
 </html>

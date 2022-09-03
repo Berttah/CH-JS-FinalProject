@@ -1,0 +1,43 @@
+html{
+    box-sizing: border-box;
+    min-width: 100%;
+    max-width: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+#productAreaContainer{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.productCard{
+    background: aqua;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+@media(min-width: 1900px){
+    .productCard{
+        width: 400px;
+    }
+}
