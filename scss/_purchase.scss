@@ -1,0 +1,65 @@
+.mainPurchase{
+    background-image: url(../assets/5018534.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    padding: 70px 20px 20px 20px;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    .purcharseContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px;
+        border: 4px solid #2c3e50;
+        border-radius: 8px;
+        width: 700px;
+        background-color: #FFFFF9;
+        .mainMsg{
+            padding: 10px 0px;
+            font-size: 28px;
+            text-align: center;
+            width: 100%;
+            border-bottom: 4px solid #18bc9c;
+        };
+        .purchaseInfo{
+            margin: 20px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            .cCPurchase{
+                padding-bottom: 20px;
+                border: none;
+                background-color: inherit;
+                .cACPurchase{
+                    padding-bottom: 0px;
+                    .cartCPurchase{
+                        height: 30px;
+                        border: 2px solid #2c3e50;
+                    }
+                }
+            }
+            .purchaseInfoBottom{
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+        };
+        .finalMsg{
+            padding: 0px 80px;
+        };
+        .back2Store{
+            color: white;
+            background-color: #2c3e50;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 15px;
+            margin: 5px 0px 5px 450px;
+            font-size: 12px;
+        }
+    }
+}
