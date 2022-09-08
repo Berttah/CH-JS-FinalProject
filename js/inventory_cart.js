@@ -1,3 +1,68 @@
+let inventory = [
+    { 
+        pName: 'product 1',
+        id: 1, 
+        price: 10,
+        quantity: 6 
+    },
+    { 
+        pName: 'product 2',
+        id: 2, 
+        price: 10,
+        quantity: 0 
+    },
+    { 
+        pName: 'product 3',
+        id: 3, 
+        price: 10,
+        quantity: 7 
+    },
+    { 
+        pName: 'product 4',
+        id: 4, 
+        price: 10,
+        quantity: 2 
+    },
+    { 
+        pName: 'product 5',
+        id: 5, 
+        price: 10,
+        quantity: 8 
+    },
+    { 
+        pName: 'product 6',
+        id: 6, 
+        price: 10,
+        quantity: 0 
+    },
+    { 
+        pName: 'product 7',
+        id: 7, 
+        price: 10,
+        quantity: 9 
+    },
+    { 
+        pName: 'product 8',
+        id: 8, 
+        price: 10,
+        quantity: 3 
+    },
+    { 
+        pName: 'product 9',
+        id: 9, 
+        price: 10,
+        quantity: 0 
+    },
+    { 
+        pName: 'product 10',
+        id: 10, 
+        price: 10,
+        quantity: 1 
+    },
+];
+
+// console.table(inventory)
+
 // this constant equals to the number of items in the inventory
 const PRODUCT_QUANTITY = 10
 class Cart{
@@ -8,7 +73,7 @@ class Cart{
     // this method serves to add the product and the quantity the user wanted
     addProduct(prod, qty){
         // this checks if the quantity is valid
-        if (prod.checkStock(qty)){
+        if (prod.quantity >= qty){
             // then pushes the item & quantity to the cart
             this.products.push(prod)
             this.quantity = qty
@@ -25,9 +90,10 @@ class Cart{
             return
         }
         // when something was added
+        console.log('The products on the cart are:')
         this.products.forEach(prod => {
             console.log(
-                `Name: ${prod.name}`,
+                `Name: ${prod.pName}`,
                 `ID: ${prod.id}`,
                 `Price: ${prod.price}`,
                 `Quantity: ${this.quantity}`
@@ -38,20 +104,5 @@ class Cart{
     }
 }
 // these state the cart & inventory that will act as the arrays
-var cart = new Cart()
-var inventory = [];
-
-// this cylce creates by iteration up to PRODUCT_QUANTITY the items that will go into the inventory
-for (let i=0;i<PRODUCT_QUANTITY;i++){
-    const p = new Product(
-        `Product ${i}`,
-        i,
-        Math.floor(Math.random()*(50-0)),
-        Math.floor(Math.random()*(100-50)+50),
-        )
-    inventory.push(p)
-}
-
-// console.log('Inventory', inventory)
-
+let cart = new Cart()
 

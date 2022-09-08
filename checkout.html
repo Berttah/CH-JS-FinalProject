@@ -13,7 +13,8 @@
     <!-- Title & Navbar -->
     <nav class="navBar">
         <h1>Proyecto Final - Javascript: Shop & Cart</h1>
-        <div>
+        <div class="navBarUser">
+            <input class="searchInput" type="text">
             <ul class="navButtonList">
                 <li>
                     <a class="navButton" href="./index.html">Products</a>
@@ -26,16 +27,104 @@
     </nav>
 
     <!-- Checkout Area -->
-    <main id="productAreaContainer" class="mainCheckout">
-        <p>
-            Formulario de datos del comprador & Checkout
-        </p>
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-solid fa-truck-moving"></i>
-        <i class="fa-solid fa-trash-can"></i>
-        <i class="fa-solid fa-circle-plus"></i>
-        <i class="fa-solid fa-circle-minus"></i>
-        <i class="fa-solid fa-credit-card"></i>
+    <main class="mainCheckout">
+        <div class="cartContainer">
+            <h3 class="formTitle"><i class="fa-solid fa-cart-shopping"></i> Cart</h3>
+            <div class="cardsAreaContainer">
+                <div class="cartCard">
+                    <p>Product 1</p>
+                    <div class="cartPriceArea">
+                        <div class="cartButtons">
+                            <i class="fa-solid fa-circle-minus addSubst"></i>
+                            <p>2</p>
+                            <i class="fa-solid fa-circle-plus addSubst"></i>
+                        </div>
+                        <p>$_____</p>
+                    </div>
+                </div>
+                <div class="cartCard">
+                    <p>Product 4</p>
+                    <div class="cartPriceArea">
+                        <div class="cartButtons">
+                            <i class="fa-solid fa-circle-minus addSubst"></i>
+                            <p>3</p>
+                            <i class="fa-solid fa-circle-plus addSubst"></i>
+                        </div>
+                        <p>$_____</p>
+                    </div>
+                </div>
+                <div class="cartCard">
+                    <p>Product 10</p>
+                    <div class="cartPriceArea">
+                        <div class="cartButtons">
+                            <i class="fa-solid fa-circle-minus addSubst"></i>
+                            <p>5</p>
+                            <i class="fa-solid fa-circle-plus addSubst"></i>
+                        </div>
+                        <p>$_____</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subtotalArea">
+                <button class="cartDiscard">
+                    <i class="fa-solid fa-trash-can"></i> Discard Cart
+                </button>
+                <p>Product Subtotal: $_____</p>
+            </div>
+        </div>
+        <form class="checkoutForm" action="">
+            <h3 class="formTitle"><i class="fa-solid fa-user"></i> User Info <i class="fa-solid fa-credit-card"></i></h3>
+            <div style="padding: 0px 10px 10px 10px;">
+                <div class="inputArea">
+                    <label for="firstName">First Name</label>
+                    <input class="formInput" type="text" name="firstName">
+                </div>
+                <div class="inputArea">
+                    <label for="lastName">Last Name</label>
+                    <input class="formInput" type="text" name="lastName">
+                </div>
+                <div class="inputArea">
+                    <label for="cardNumber">Card Number</label>
+                    <input class="formInput" type="number" name="cardNumber">
+                </div>
+                <div class="inputAreaSmaller">
+                    <div style="width: 50%;">
+                        <label for="securityNumber">Security Number</label>
+                        <input class="formInputSmaller" type="number" name="securityNumber">
+                    </div>
+                    <div style="width: 50%;">
+                        <label for="expDate">Expiration Date</label>
+                        <input class="formInputSmaller" type="number" name="expDate">
+                    </div>
+                </div>
+                <div class="inputArea">
+                    <label for="telephone">Telephone</label>
+                    <input class="formInput" type="number" name="telephone">
+                </div>
+            </div>
+        </form>
+
+        <div class="shippingAndBuy">
+            <h3 class="formTitle"><i class="fa-solid fa-truck-moving"></i> Shipping</h3>
+            <div class="shippingContainer">
+                <p>Do you want to ship the package?</p>
+                <div class="areaButtonsArea">
+                    <button class="areaButtons">No</button>
+                    <button class="areaButtons">Close</button>
+                    <button class="areaButtons">Near</button>
+                    <button class="areaButtons">Far</button>
+                </div>
+                <div>Shipping Price: $____</div>
+            </div>
+            
+            <div class="buyArea">
+                <h3>Final Price $____</h3>
+                <button class="buyButton">
+                    <a href="./purchase.html">Buy</a>
+                </button>
+            </div>
+            
+        </div>
     </main>
 
 
