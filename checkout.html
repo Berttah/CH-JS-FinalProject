@@ -30,46 +30,14 @@
     <main class="mainCheckout">
         <div class="cartContainer">
             <h3 class="formTitle"><i class="fa-solid fa-cart-shopping"></i> Cart</h3>
-            <div class="cardsAreaContainer">
-                <div class="cartCard">
-                    <p>Product 1</p>
-                    <div class="cartPriceArea">
-                        <div class="cartButtons">
-                            <i class="fa-solid fa-circle-minus addSubst"></i>
-                            <p>2</p>
-                            <i class="fa-solid fa-circle-plus addSubst"></i>
-                        </div>
-                        <p>$_____</p>
-                    </div>
-                </div>
-                <div class="cartCard">
-                    <p>Product 4</p>
-                    <div class="cartPriceArea">
-                        <div class="cartButtons">
-                            <i class="fa-solid fa-circle-minus addSubst"></i>
-                            <p>3</p>
-                            <i class="fa-solid fa-circle-plus addSubst"></i>
-                        </div>
-                        <p>$_____</p>
-                    </div>
-                </div>
-                <div class="cartCard">
-                    <p>Product 10</p>
-                    <div class="cartPriceArea">
-                        <div class="cartButtons">
-                            <i class="fa-solid fa-circle-minus addSubst"></i>
-                            <p>5</p>
-                            <i class="fa-solid fa-circle-plus addSubst"></i>
-                        </div>
-                        <p>$_____</p>
-                    </div>
-                </div>
+            <div id="cardsAreaContainer" class="cardsAreaContainer">
+
             </div>
             <div class="subtotalArea">
                 <button class="cartDiscard">
                     <i class="fa-solid fa-trash-can"></i> Discard Cart
                 </button>
-                <p>Product Subtotal: $_____</p>
+                <p id="subtotalPrice" class="subtotalPrice"></p>
             </div>
         </div>
         <form class="checkoutForm" action="">
@@ -114,11 +82,10 @@
                     <button class="areaButtons">Near</button>
                     <button class="areaButtons">Far</button>
                 </div>
-                <div>Shipping Price: $____</div>
-            </div>
+                <p id="shippingPrice">Shipping Price: $____</p>            </div>
             
             <div class="buyArea">
-                <h3>Final Price $____</h3>
+                <h3 id="finalPrice"></h3>
                 <button class="buyButton">
                     <a href="./purchase.html">Buy</a>
                 </button>
@@ -130,7 +97,8 @@
 
     
     <script src="./js/products.js"></script> <!--it is called first since the following use the product constructor-->
-    <script src="./js/cart.js"></script>
+    <script src="./js/inventory_cart.js"></script>
+    <script src="./js/cart_checkout.js"></script>
     <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>

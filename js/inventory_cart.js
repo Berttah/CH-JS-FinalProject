@@ -1,62 +1,62 @@
 let inventory = [
     { 
-        pName: 'product 1',
+        pName: 'The Lightning Thief',
         id: 1, 
-        price: 10,
+        price: 1331.50,
         quantity: 6 
     },
     { 
-        pName: 'product 2',
+        pName: 'Sea of Monsters',
         id: 2, 
-        price: 10,
+        price: 1183.00,
         quantity: 0 
     },
     { 
-        pName: 'product 3',
+        pName: "Titan's Curse",
         id: 3, 
-        price: 10,
+        price: 1183.00,
         quantity: 7 
     },
     { 
-        pName: 'product 4',
+        pName: 'Battle of the Labyrinth',
         id: 4, 
-        price: 10,
+        price: 1240.50,
         quantity: 2 
     },
     { 
-        pName: 'product 5',
+        pName: 'The Last Olympian',
         id: 5, 
-        price: 10,
+        price: 1323.50,
         quantity: 8 
     },
     { 
-        pName: 'product 6',
+        pName: 'The Lost Hero',
         id: 6, 
-        price: 10,
+        price: 2639.00,
         quantity: 0 
     },
     { 
-        pName: 'product 7',
+        pName: 'The Son of Neptune',
         id: 7, 
-        price: 10,
+        price: 2030.00,
         quantity: 9 
     },
     { 
-        pName: 'product 8',
+        pName: 'The Mark of Athena',
         id: 8, 
-        price: 10,
+        price: 1989.00,
         quantity: 3 
     },
     { 
-        pName: 'product 9',
+        pName: 'The House of Hades',
         id: 9, 
-        price: 10,
+        price: 2107.50,
         quantity: 0 
     },
     { 
-        pName: 'product 10',
+        pName: 'The Blood of Olympus',
         id: 10, 
-        price: 10,
+        price: 2401.00,
         quantity: 1 
     },
 ];
@@ -71,12 +71,14 @@ class Cart{
         this.products = []
     }
     // this method serves to add the product and the quantity the user wanted
-    addProduct(prod, qty){
+    addProduct(prod){
+        let orderQty = Number(prompt('How many do you want to buy?'))
         // this checks if the quantity is valid
-        if (prod.quantity >= qty){
+        if (prod.quantity >= orderQty){
             // then pushes the item & quantity to the cart
             this.products.push(prod)
-            this.quantity = qty
+            prod.orderQty = orderQty
+            prod.quantity = prod.quantity - orderQty
         } else {
             console.log('There is not enough stock');
             return
@@ -96,7 +98,8 @@ class Cart{
                 `Name: ${prod.pName}`,
                 `ID: ${prod.id}`,
                 `Price: ${prod.price}`,
-                `Quantity: ${this.quantity}`
+                `Quantity: ${prod.quantity}`,
+                `User Order: ${prod.orderQty}`
                 )
         })
     
@@ -105,4 +108,3 @@ class Cart{
 }
 // these state the cart & inventory that will act as the arrays
 let cart = new Cart()
-
