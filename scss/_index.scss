@@ -12,7 +12,6 @@
     width: 100%;
     padding: 60px 20px 20px 20px;
     box-sizing: border-box;
-
     .productCard{
         background: #FFFFF9;
         width: 220px;
@@ -36,6 +35,10 @@
             justify-content: center;
             align-items: center;
             border-radius: 0px 4px 0px 4px;
+        };
+        #labelCardNoStock{
+            @extend .labelCard;
+            background-color: #A12D4C;
         };
         .imgCard{
             grid-area:img;
@@ -72,7 +75,15 @@
                 background-color: #335A66;
                 cursor: pointer;
             }
-        }
+        };
+        #buyCardNoStock{
+            @extend .buyCard;
+            background-color: #84909C;
+            &:hover{
+                background-color: #84909C;
+                cursor: default;
+            }
+        };
     }
 }
 
