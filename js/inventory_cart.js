@@ -70,20 +70,34 @@ class Cart{
         // the cart starts as a empty array
         this.products = []
     }
+    
     // this method serves to add the product and the quantity the user wanted
     addProduct(prod){
         let orderQty = Number(prompt('How many do you want to buy?'))
-        // this checks if the quantity is valid
-        if (prod.quantity >= orderQty){
-            // then pushes the item & quantity to the cart
-            this.products.push(prod)
-            prod.orderQty = orderQty
-            prod.quantity = prod.quantity - orderQty
+        
+        // checks if the product was already on the cart
+        if (prod.orderQty > 0){
+            if (prod.quantity >= orderQty){
+                // if it was, adds the amount to the order
+                prod.orderQty = prod.orderQty + orderQty
+                prod.quantity = prod.quantity - orderQty
+            } else {
+                console.log('There is not enough stock');
+                return
+            }
         } else {
-            console.log('There is not enough stock');
-            return
+            if (prod.quantity >= orderQty){
+                // then pushes the item & quantity to the cart
+                this.products.push(prod)
+                prod.orderQty = orderQty
+                prod.quantity = prod.quantity - orderQty
+            } else {
+                console.log('There is not enough stock');
+                return
+            }
         }
     }
+    
     // this method shows the items on the cart
     cartShow(){
         // when there are no items
@@ -101,10 +115,8 @@ class Cart{
                 `Quantity: ${prod.quantity}`,
                 `User Order: ${prod.orderQty}`
                 )
-        })
-    
-    // prod.quantity -= orderQty -> this will be useful on a method when at the end of the purchase the stock in inventory of the items will decrease by the ammount bought
+        })    
     }
 }
-// these state the cart & inventory that will act as the arrays
+// this declares the array that will act as the cart
 let cart = new Cart()

@@ -1,12 +1,15 @@
-let prodID = prompt('Ingrese la ID del producto a comprar (1 -> 10) \n[Ingrese 11+ para terminar]')
+function cardClicked(event) {
+        console.log('clicked')
+        console.log(event.currentTarget.id)
 
-// checks that the ID is valid and then executes the instructions
-while (prodID >= 0 && prodID <= PRODUCT_QUANTITY) {
-        // this method adds the selected item from the inventory to the cart and checks if the amount the user wants is valid
+        let prodID = event.currentTarget.id
+        // funcion que checkee si ya estaba en el cart, de estarlo suma el userQty en vez del producto
         cart.addProduct(inventory[prodID-1])
-        // then since the first conditions are valid it asks again for more items, if the ID selected is outside the range the cycle ends
-        prodID = prompt('Ingrese la ID del producto a comprar (0 -> 10)')
-        if (prodID < 0 || prodID >= PRODUCT_QUANTITY) break       
-} 
-// lastly this shows what is in the cart
-cart.cartShow()
+        cart.cartShow()
+        // removes the inventory display
+        popDisplay()
+        // remakes the updated inventory display
+        inventoryDisplay()
+}
+
+inventoryDisplay()
