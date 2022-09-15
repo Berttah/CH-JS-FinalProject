@@ -14,7 +14,7 @@
     <nav class="navBar">
         <h1>Proyecto Final - Javascript: Shop & Cart</h1>
         <div class="navBarUser">
-            <input class="searchInput" type="text">
+            <input id="searchInput" class="searchInput" type="text">
             <ul class="navButtonList">
                 <li>
                     <a class="navButton" href="./index.html">Products</a>
@@ -77,16 +77,16 @@
             <div class="shippingContainer">
                 <p>Do you want to ship the package?</p>
                 <div class="areaButtonsArea">
-                    <button class="areaButtons">No</button>
-                    <button class="areaButtons">Close</button>
-                    <button class="areaButtons">Near</button>
-                    <button class="areaButtons">Far</button>
+                    <button type="button" id="0" class="areaButtons" onclick="areaSelection(event)">No</button>
+                    <button type="button" id="1" class="areaButtons" onclick="areaSelection(event)">Close</button>
+                    <button type="button" id="2" class="areaButtons" onclick="areaSelection(event)">Near</button>
+                    <button type="button" id="3" class="areaButtons" onclick="areaSelection(event)">Far</button>
                 </div>
                 <p id="shippingPrice">Shipping Price: $____</p>            </div>
             
             <div class="buyArea">
                 <h3 id="finalPrice"></h3>
-                <button class="buyButton">
+                <button type="button" class="buyButton">
                     <a href="./purchase.html">Buy</a>
                 </button>
             </div>
@@ -99,6 +99,7 @@
     <script src="./js/products.js"></script> <!--it is called first since the following use the product constructor-->
     <script src="./js/inventory_cart.js"></script>
     <script src="./js/cart_checkout.js"></script>
+    <script src="./js/search_filters.js"></script>
     <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>
