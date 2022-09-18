@@ -19,7 +19,7 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
 function displayStock(){
     let inventoryStock = inventory.filter(item => item.quantity > 0)
     let inventoryNoStock = inventory.filter(item => item.quantity == 0)
-    console.table(`Our items on stock are:`, inventoryStock)
-    console.table(`Our items not on stock are:`, inventoryNoStock)
+    // console.table(`Our items on stock are:`, inventoryStock)
+    // console.table(`Our items not on stock are:`, inventoryNoStock)
 }
 displayStock()
