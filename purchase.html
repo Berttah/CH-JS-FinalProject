@@ -30,27 +30,27 @@
     <main class="mainPurchase">
         <div class="purcharseContainer">
             <p class="mainMsg">Successful Purchase</p>
+            <div id="userMsg" class="firstMsg"></div>
             <div class="purchaseInfo">
                 <div class="cartContainer cCPurchase">
                     <div id="cACPurchase" class="cardsAreaContainer cACPurchase">
                     </div>
                 </div>
                 <div class="purchaseInfoBottom">
-                    <p id="orderID">Order ID: ____________________</p>
+                    <p id="orderID"></p>
                     <p id="finalPricePurchase"></p>
                 </div>
-
             </div>
+            <br>
             <div class="finalMsg">
-                <!--this changes if no delivery was chosen-->
-                <p>We thank you for your purchase at our store, your delivery will be arriving between 3 to 5 working days</p>
+                <p id="deliveryMsg"></p>
             </div>
             <a class="back2Store" href="./index.html">Take me back to the store</a>
         </div>
     
     </main>
 
-    <script src="./js/inventory_cart.js"></script>
+    <script src="./js/products.js"></script>
     <script src="./js/purchase.js"></script>
 </body>
 </html>

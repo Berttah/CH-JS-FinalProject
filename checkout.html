@@ -31,10 +31,9 @@
         <div class="cartContainer">
             <h3 class="formTitle"><i class="fa-solid fa-cart-shopping"></i> Cart</h3>
             <div id="cardsAreaContainer" class="cardsAreaContainer">
-
             </div>
             <div class="subtotalArea">
-                <button class="cartDiscard">
+                <button type="button" onclick="emptyCart()" class="cartDiscard">
                     <i class="fa-solid fa-trash-can"></i> Discard Cart
                 </button>
                 <p id="subtotalPrice" class="subtotalPrice"></p>
@@ -45,30 +44,33 @@
             <div style="padding: 0px 10px 10px 10px;">
                 <div class="inputArea">
                     <label for="firstName">First Name</label>
-                    <input class="formInput" type="text" name="firstName">
+                    <input id="fName" class="formInput" type="text" name="firstName">
                 </div>
                 <div class="inputArea">
                     <label for="lastName">Last Name</label>
-                    <input class="formInput" type="text" name="lastName">
+                    <input id="lName" class="formInput" type="text" name="lastName">
                 </div>
                 <div class="inputArea">
                     <label for="cardNumber">Card Number</label>
-                    <input class="formInput" type="number" name="cardNumber">
+                    <input id="cNumber" class="formInput" type="number" name="cardNumber">
                 </div>
                 <div class="inputAreaSmaller">
                     <div style="width: 50%;">
                         <label for="securityNumber">Security Number</label>
-                        <input class="formInputSmaller" type="number" name="securityNumber">
+                        <input id="sNumber" class="formInputSmaller" type="number" name="securityNumber">
                     </div>
                     <div style="width: 50%;">
                         <label for="expDate">Expiration Date</label>
-                        <input class="formInputSmaller" type="number" name="expDate">
+                        <input id="eDate" class="formInputSmaller" type="date" name="expDate">
                     </div>
                 </div>
                 <div class="inputArea">
                     <label for="telephone">Telephone</label>
-                    <input class="formInput" type="number" name="telephone">
+                    <input id="tNumber" class="formInput" type="number" name="telephone">
                 </div>
+            </div>
+            <div class="saveArea">
+                <button id="saveButton" type="button" onclick="save()">Save</button>
             </div>
         </form>
 
@@ -86,7 +88,7 @@
             
             <div class="buyArea">
                 <h3 id="finalPrice"></h3>
-                <button type="button" class="buyButton">
+                <button id="finalBuy" type="button" class="buyButton" onclick="savePurchase()">
                     <a href="./purchase.html">Buy</a>
                 </button>
             </div>
@@ -97,9 +99,9 @@
 
     
     <script src="./js/products.js"></script> <!--it is called first since the following use the product constructor-->
-    <script src="./js/inventory_cart.js"></script>
+    <script src="./js/cart.js"></script>
     <script src="./js/cart_checkout.js"></script>
+    <script src="./js/user_data.js"></script>
     <script src="./js/search_filters.js"></script>
-    <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>

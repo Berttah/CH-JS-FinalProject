@@ -141,6 +141,26 @@
             }
         }
     };
+    .saveArea{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        #saveButton{
+            margin: 10px;
+            width: 70px;
+            height: 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #2c3e50;
+            border: none;
+            border-radius: 8px;
+            &:hover{
+                background-color: #A12D4C;
+                cursor: pointer;
+            }
+        }
+    }
 }
 .shippingAndBuy{
     padding: 0px;
