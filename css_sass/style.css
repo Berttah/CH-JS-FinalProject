@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Overpass&family=Pacifico&family=Poppins:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+.swal2-title {
+  color: #2c3e50 !important;
+  font-family: Poppins;
+  font-weight: 400;
+  margin-top: -20px;
+}
+
+.swalHTML {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-top: 3px solid #A12D4C;
+  margin: 10px;
+  padding: 10px 10px 25px 10px;
+}
+.swalHTML .swalImg {
+  width: 100px;
+}
+.swalHTML .swalText {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+}
+
 html {
   box-sizing: border-box;
   min-width: 100%;
