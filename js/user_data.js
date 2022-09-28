@@ -15,23 +15,18 @@ function save(){
 // tries to set the value for the inputs if already there
 function dataDiplay() {
     let displayUD = JSON.parse(localStorage.getItem('User Data'))
-    if (displayUD) {
-        document.getElementById("fName").value = displayUD['first_name']
-        document.getElementById("lName").value = displayUD['last_name']
-        document.getElementById("cNumber").value = displayUD['card_number']
-        document.getElementById("sNumber").value = displayUD['security_number']
-        document.getElementById("eDate").value = displayUD['exp_date']
+    displayUD && (
+        document.getElementById("fName").value = displayUD['first_name'],
+        document.getElementById("lName").value = displayUD['last_name'],
+        document.getElementById("cNumber").value = displayUD['card_number'],
+        document.getElementById("sNumber").value = displayUD['security_number'],
+        document.getElementById("eDate").value = displayUD['exp_date'],
         document.getElementById("tNumber").value = displayUD['telephone_number']
-    }
+    )
 }
 
-let userData = {};
-let firstName = '';
-let lastName = '';
-let cardNumber = '';
-let secNumber = '';
-let expDate;
-let telNumber = '';
+let userData = {}
+let {firstName, lastName, cardNumber, secNumber, expDate, telNumber} = userData
 
 // These get the input values
     let firsNameInput = document.getElementById('fName')
@@ -55,8 +50,6 @@ let telNumber = '';
     // gets the button and add the event listener
     let saveButton = document.getElementById('saveButton')
         // nota mental: no usar eventListener para botones con onClick
-
-
 
 
 dataDiplay()

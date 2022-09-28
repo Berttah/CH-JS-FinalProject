@@ -11,7 +11,7 @@ class Product {
 let inventory = [
     { 
         pName: "The Lightning Thief",
-        id: 1, 
+        id: 1,
         price: 1331.50,
         quantity: 6 
     },
@@ -70,5 +70,3 @@ let inventory = [
         quantity: 1 
     },
 ];
-
-// console.table(inventory)

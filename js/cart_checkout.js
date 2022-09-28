@@ -2,27 +2,15 @@
 const sPrice = 'Shipping Price'
 let storageShip = Number(localStorage.getItem(sPrice))
 let subtotal = 0;
-if (localStorage.getItem(sPrice)){
-    areaPrice = storageShip
-} else {
-    areaPrice = 0;
-}
+localStorage.getItem(sPrice) ? areaPrice = storageShip : areaPrice = 0;
 
 // defines the price for the shipping areas
 function areaSelection(event) {
-    if (event.currentTarget.id == 0) {
-        areaPrice=0
-        localStorage.setItem(sPrice, 0)
-    } else if (event.currentTarget.id == 1) {
-        areaPrice=300
-        localStorage.setItem(sPrice, 300)
-    } else if (event.currentTarget.id == 2) {
-        areaPrice=800
-        localStorage.setItem(sPrice, 800)
-    } else if (event.currentTarget.id == 3) {
-        areaPrice=1200
-        localStorage.setItem(sPrice, 1200)
-    }
+    event.currentTarget.id == 0 && (areaPrice=0, localStorage.setItem(sPrice, 0))
+    event.currentTarget.id == 1 && (areaPrice=300, localStorage.setItem(sPrice, 300))
+    event.currentTarget.id == 2 && (areaPrice=800, localStorage.setItem(sPrice, 800))
+    event.currentTarget.id == 3 && (areaPrice=1200, localStorage.setItem(sPrice, 1200))
+
     let storageShip = localStorage.getItem(sPrice)
     shippingPrice.innerText = `Shipping Price: $${storageShip}` 
     finalPrice()
@@ -31,15 +19,10 @@ function areaSelection(event) {
 // creates the display for the cart
 function cartDisplay() {
     for (let i=0;i<localStorage.length;i++){
-
         const key = localStorage.key(i);
-
         if (!isNaN(key)){
-
             let quantity = localStorage.getItem(key) // this is the value (qty) of the item on localStorage
-            
-            subtotal = subtotal + (inventory[key-1].price*quantity) // adds the price
-    
+            subtotal += (inventory[key-1].price*quantity) // adds the price
             let card = document.createElement('div');
                 card.classList.add(`cartCard`);
                 card.classList.add(`${key}`);
@@ -55,7 +38,6 @@ function cartDisplay() {
                                    `;
                  document.getElementById('cardsAreaContainer').appendChild(card)
         }
-        
     }
 }
 
@@ -115,13 +97,8 @@ for (button of addSubstButtons){
         
         let price = inventory[itemID-1].price
         
-        if (itemAction === '+'){
-            subtotal = subtotal + price
-            // console.log('New Subtotal: ',subtotal)
-        } else if (itemAction === '-') {
-            subtotal = subtotal - price
-            // console.log('New Subtotal: ',subtotal)
-        }
+        // logic that adds or substract the price depending on the button pressed
+        itemAction === '+' ? subtotal += price : subtotal -= price
 
         // this gets the id from the quantity display
         let qtyDisplay = document.getElementById(`item${itemID}`)
@@ -132,29 +109,20 @@ for (button of addSubstButtons){
         priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`
 
         // logica para quitar el item cuando la qty es 0
-        if (newQuantity<1){
-            localStorage.removeItem(itemID)
+        newQuantity < 1 && (
+            localStorage.removeItem(itemID),
             location.reload()
-        }
+        )
 
         //  logica para que no sume items por encima del stock
-        if (newQuantity > inventory[itemID-1].quantity){
-            // redefines the item quantity on the cart
-            newQuantity = inventory[itemID-1].quantity
-
-            // redefines the subtotal
-            subtotal = subtotal - price
-
-            // redefines the qtyDisplay
-            qtyDisplay.innerText = `${newQuantity}`
-
-            // redefines the priceDisplay
-            priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`
-
-            // redefines the item in storage at the limit
-            localStorage.setItem(itemID, newQuantity)
-            console.log('limit')
-        }
+        newQuantity > inventory[itemID-1].quantity && (
+            newQuantity = inventory[itemID-1].quantity,                                 // redefines the item quantity on the cart
+            subtotal -= price,                                                          // redefines the subtotal
+            qtyDisplay.innerText = `${newQuantity}`,                                    // redefines the qtyDisplay
+            priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`,     // redefines the priceDisplay
+            localStorage.setItem(itemID, newQuantity),                                  // redefines the item in storage at the limit
+                console.log('limit')
+        )
 
         // these displays the prices and subtotals
         shippingDisplay()
@@ -162,6 +130,3 @@ for (button of addSubstButtons){
         finalPrice()
     })
 }
-
-
-

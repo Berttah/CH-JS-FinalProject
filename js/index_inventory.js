@@ -4,7 +4,6 @@ buyButtonID = '';
 
 
 // this loop iterates every item on the inventory and creates a product card, it changes if there is no stock for it
-// Will be red if there is no stock on inventory. Green if there is stock. If the full stock is on cart it still is green
 function inventoryDisplay(){
     for (item of inventory) {
         let productCard = document.createElement('div');

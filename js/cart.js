@@ -11,11 +11,11 @@ class Cart{
         let previousQty = 0;
         
         // checks if the product was already on the cart
-        if (localStorage.getItem(prod.id)){
-            previousQty = Number(localStorage.getItem(prod.id))
-            console.log("previousQty",previousQty)
-            console.log("result", previousQty+orderQty)
-        }
+        localStorage.getItem(prod.id) && (
+            previousQty = Number(localStorage.getItem(prod.id)),
+            console.log("previousQty",previousQty),
+            console.log("result", previousQty + orderQty)
+        )
         if (prod.quantity < orderQty + previousQty) {
             console.log('Not enough stock')
             return
@@ -43,7 +43,10 @@ class Cart{
     };
     
     emptyCart(){
-        localStorage.clear()
+        for (let i=0;i<localStorage.length;i++){
+            const key = localStorage.key(i);
+            !isNaN(key) && localStorage.removeItem(key)   
+        }
     };
 
     modCart(id,action){
