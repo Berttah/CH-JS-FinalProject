@@ -11,6 +11,11 @@ function cardClicked(event) {
         popDisplay()
         // remakes the updated inventory display
         inventoryDisplay()
+        Toast.fire({
+                icon: 'success',
+                title: `Added ${inventory[prodID-1].pName} to the cart`,
+                background: 'rgba(255, 255, 249, 0.95)'
+        })
 }
 
 inventoryDisplay()
