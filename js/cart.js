@@ -7,7 +7,8 @@ class Cart{
     
     // this method serves to add the product and the quantity the user wanted
     addProduct(prod){
-        let orderQty = Number(prompt('How many do you want to buy?'))
+        let orderQty = 0
+        orderQty++
         let previousQty = 0;
         
         // checks if the product was already on the cart

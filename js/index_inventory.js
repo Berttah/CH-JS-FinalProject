@@ -2,7 +2,6 @@
 labelID = '';
 buyButtonID = '';
 
-
 // this loop iterates every item on the inventory and creates a product card, it changes if there is no stock for it
 function inventoryDisplay(){
     for (item of inventory) {

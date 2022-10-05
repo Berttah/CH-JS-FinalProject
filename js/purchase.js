@@ -29,7 +29,6 @@ selectedShipping == 1200 && (deliveryMsg.innerText = 'Since you selected for a f
 
 // These are to display a message based in the user data
 let userDataPurchase = JSON.parse(localStorage.getItem('User Data'))
-    console.log(userDataPurchase)
 let userMsg = document.getElementById('userMsg')
 userMsg.innerText = `We thank you ${userDataPurchase['first_name']} ${userDataPurchase['last_name']} for your purchase. `
 

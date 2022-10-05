@@ -32,8 +32,7 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
   }
 );
 
-// this will be used to display in a different way items that have no stock
-// probable by granting a different stock label
+// This is to check the items on stock
 function displayStock(){
     let inventoryStock = inventory.filter(item => item.quantity > 0)
         console.table(`Our items on stock are:`, inventoryStock)
