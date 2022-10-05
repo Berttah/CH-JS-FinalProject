@@ -1,5 +1,6 @@
 // Takes the User Data to be used at Purchase Page
-function save(){                            
+function save(event){
+    event.preventDefault();
     userData['first_name'] = firstName
     userData['last_name'] = lastName
     userData['card_number'] = cardNumber

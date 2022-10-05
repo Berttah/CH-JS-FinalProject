@@ -43,4 +43,4 @@ let orderID = Math.floor(Math.random()*((999999999-0)+1));
 let orderIdDisplay = document.getElementById('orderID')
 orderIdDisplay.innerText = `Order ID: ${orderID}` 
 ///////////////////////////////////////////////////////////////////
-purchaseDisplay()
+loadData(purchaseDisplay)

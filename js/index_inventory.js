@@ -41,3 +41,5 @@ function popDisplay(){
         card.remove()
       });
 }
+
+loadData(inventoryDisplay)

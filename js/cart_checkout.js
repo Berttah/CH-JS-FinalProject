@@ -38,7 +38,10 @@ function cartDisplay() {
                                    `;
                  document.getElementById('cardsAreaContainer').appendChild(card)
         }
-    }
+    };
+    shippingDisplay()
+    finalSubtotal()
+    finalPrice()
 }
 
 function emptyCart(){
@@ -70,63 +73,63 @@ function savePurchase() {
     localStorage.setItem('Final Price', priceFinal)
 }
     
-// these execute at the start and create the entire diplay
-cartDisplay()
-shippingDisplay()
-finalSubtotal()
-finalPrice()
-
-
-// these are the logic behind the add/substract from the cart
-let addSubstButtons = document.querySelectorAll('.addSubst')
-for (button of addSubstButtons){
-    button.addEventListener('click', function(event){        
-        // this gets the key from storage
-        let itemID = event.currentTarget.parentNode.parentNode.id
-            console.log('The item ID: ', itemID)
-        // this gets the operation
-        let itemAction = event.currentTarget.getAttribute('data-action')
-            // console.log(event.currentTarget.getAttribute('data-action'))
-            // console.log(itemAction)
-        // this method is the logic to add or substract
-        cart.modCart(itemID,itemAction)
-        
-        // this gets the new value(qty) for the key(item id) 
-        let newQuantity = localStorage.getItem(itemID) 
-            console.log('The new Quantity: ',newQuantity)
-        
-        let price = inventory[itemID-1].price
-        
-        // logic that adds or substract the price depending on the button pressed
-        itemAction === '+' ? subtotal += price : subtotal -= price
-
-        // this gets the id from the quantity display
-        let qtyDisplay = document.getElementById(`item${itemID}`)
-        qtyDisplay.innerText = `${newQuantity}`
-
-        // this displays the item price
-        let priceDisplay = document.getElementById(`price${itemID}`)
-        priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`
-
-        // logica para quitar el item cuando la qty es 0
-        newQuantity < 1 && (
-            localStorage.removeItem(itemID),
-            location.reload()
-        )
-
-        //  logica para que no sume items por encima del stock
-        newQuantity > inventory[itemID-1].quantity && (
-            newQuantity = inventory[itemID-1].quantity,                                 // redefines the item quantity on the cart
-            subtotal -= price,                                                          // redefines the subtotal
-            qtyDisplay.innerText = `${newQuantity}`,                                    // redefines the qtyDisplay
-            priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`,     // redefines the priceDisplay
-            localStorage.setItem(itemID, newQuantity),                                  // redefines the item in storage at the limit
-                console.log('limit')
-        )
-
-        // these displays the prices and subtotals
-        shippingDisplay()
-        finalSubtotal()
-        finalPrice()
-    })
+function addSubDefinition() {
+    // these are the logic behind the add/substract from the cart
+    let addSubstButtons = document.querySelectorAll('.addSubst')
+    for (button of addSubstButtons){
+        button.addEventListener('click', function(event){        
+            // this gets the key from storage
+            let itemID = event.currentTarget.parentNode.parentNode.id
+                console.log('The item ID: ', itemID)
+            // this gets the operation
+            let itemAction = event.currentTarget.getAttribute('data-action')
+                // console.log(event.currentTarget.getAttribute('data-action'))
+                // console.log(itemAction)
+            // this method is the logic to add or substract
+            cart.modCart(itemID,itemAction)
+            
+            // this gets the new value(qty) for the key(item id) 
+            let newQuantity = localStorage.getItem(itemID) 
+                console.log('The new Quantity: ',newQuantity)
+            
+            let price = inventory[itemID-1].price
+            
+            // logic that adds or substract the price depending on the button pressed
+            itemAction === '+' ? subtotal += price : subtotal -= price
+    
+            // this gets the id from the quantity display
+            let qtyDisplay = document.getElementById(`item${itemID}`)
+            qtyDisplay.innerText = `${newQuantity}`
+    
+            // this displays the item price
+            let priceDisplay = document.getElementById(`price${itemID}`)
+            priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`
+    
+            // logica para quitar el item cuando la qty es 0
+            newQuantity < 1 && (
+                localStorage.removeItem(itemID),
+                location.reload()
+            )
+    
+            //  logica para que no sume items por encima del stock
+            newQuantity > inventory[itemID-1].quantity && (
+                newQuantity = inventory[itemID-1].quantity,                                 // redefines the item quantity on the cart
+                subtotal -= price,                                                          // redefines the subtotal
+                qtyDisplay.innerText = `${newQuantity}`,                                    // redefines the qtyDisplay
+                priceDisplay.innerText = `$${newQuantity * inventory[itemID-1].price}`,     // redefines the priceDisplay
+                localStorage.setItem(itemID, newQuantity),                                  // redefines the item in storage at the limit
+                    console.log('limit')
+            )
+    
+            // these displays the prices and subtotals
+            shippingDisplay()
+            finalSubtotal()
+            finalPrice()
+        })
+    }
 }
+
+
+// these execute at the start and create the entire diplay
+loadData(cartDisplay)
+loadData(addSubDefinition)
